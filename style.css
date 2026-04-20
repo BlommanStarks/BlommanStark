@@ -85,11 +85,10 @@ body {
     justify-content: center;
     position: relative;
     background: linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), 
-                url('tinified.zip') center/cover no-repeat;
+                url('hero-bg.jpg') center/cover no-repeat;
     overflow: hidden;
     padding-top: 60px;
 }
-
 /* === 🌊 ORGANISKA FORMER - GRUND === */
 .shape, .circle, .floating-shape {
     position: absolute;
