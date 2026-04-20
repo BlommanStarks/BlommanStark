@@ -402,3 +402,85 @@ body {
         display: none;
     }
 }
+/* ✨ NY LOGO I HERO-SEKTIONEN ✨ */
+.logo-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.logo-flower {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-hero h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, var(--red-medium), var(--pink-dark), var(--red-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    text-shadow: none;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* ✨ FOOTER MED INSTAGRAM ✨ */
+.footer {
+    background: linear-gradient(135deg, var(--red-dark), var(--red-medium));
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.instagram-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.instagram-footer:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.instagram-footer i {
+    font-size: 1.3rem;
+}
+
+/* ✨ Responsiv justering för logo ✨ */
+@media (max-width: 768px) {
+    .logo-hero h1 {
+        font-size: 2.5rem;
+    }
+    .logo-flower {
+        font-size: 2.2rem;
+    }
+}
