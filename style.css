@@ -87,7 +87,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: var(--bg-main); /* ← Enhetlig bakgrund */
+    background: linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), 
+                url('tinified.zip') center/cover no-repeat;
     overflow: hidden;
     padding-top: 60px;
 }
