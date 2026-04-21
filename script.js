@@ -30,3 +30,55 @@ window.addEventListener('load', function() {
         document.body.style.opacity = '1';
     }, 100);
 });
+/* ==========================================
+   🌸 BLOMMANSTARK - ENKLA FÖRBÄTTRINGAR
+   ========================================== */
+
+// === 1. TILLBAKA TILL TOPPEN-KNAPP ===
+const backToTopBtn = document.querySelector('.back-to-top');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+}
+
+// === 2. MJUK SCROLL FÖR MENY-LÄNKAR ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// === 3. LÄGG TILL AKTIV-KLASS PÅ MENYN VID SCROLL ===
+const sections = document.querySelectorAll('section[id]');
+const menuBlobs = document.querySelectorAll('.menu-blob');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    menuBlobs.forEach(blob => {
+        blob.classList.remove('active');
+        if (blob.getAttribute('href') === `#${current}`) {
+            blob.classList.add('active');
+        }
+    });
+});
