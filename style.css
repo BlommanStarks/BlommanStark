@@ -78,16 +78,38 @@ body {
 }
 
 /* === HERO SEKTION === */
+/* === HERO / BANNER === */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: auto;              /* Tar bort helskärmskravet */
+    padding: 80px 20px 40px;       /* 80px topp-marginal så menyn inte täcker bilden */
+    background: var(--bg-main);    /* Använder din mjuka rosa bakgrundsfärg */
+    text-align: center;
     position: relative;
-    background: linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), 
-                url('hero-bg.jpg') center/cover no-repeat;
     overflow: hidden;
-    padding-top: 60px;
+}
+
+/* Detta styr hur bilden visas */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 320px;                 /* Bannerhöjd - justera här om du vill ha den högre/lägre */
+    background: url('hero-bg.jpg') center 20% / cover no-repeat; /* 20% flyttar fokus uppåt så huvudet syns */
+    border-radius: 0 0 20px 20px;  /* Mjuk rundning nertill */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* Se till att texten hamnar OVANPÅ bilden, inte under */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 /* === 🌊 STATISKA ORGANISKA FORMER (INGEN RÖRELSE) === */
 .shape, .circle, .floating-shape,
