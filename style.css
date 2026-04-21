@@ -221,3 +221,20 @@ h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 
 .menu-blob, .info-blob, .calendar-blob, .contact-info {
     border: none !important; /* Tar bort alla linjer/kanter */
 }
+/* === SISTA JUSTERINGAR: BILD & LINJER (BARA DATOR) === */
+@media screen and (min-width: 769px) {
+    /* Flytta bilden LÅNGT ner */
+    .hero-image-wrapper img {
+        object-position: center 85% !important;
+    }
+    
+    /* Ta bort ALLA linjer/kanter */
+    .menu-blob {
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    }
+    
+    .info-blob, .calendar-blob, .contact-info {
+        border: none !important;
+    }
+}
