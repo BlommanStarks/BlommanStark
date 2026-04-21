@@ -275,3 +275,64 @@ h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 
     background: var(--pink-1);
     transform: translateY(-3px);
 }
+/* === AKTIV MENY-KNAPP (när man scrollar) === */
+.menu-blob.active {
+    background: var(--red-1) !important;
+    color: white !important;
+    box-shadow: 0 6px 15px rgba(255, 107, 122, 0.4) !important;
+    transform: scale(1.05);
+}
+
+/* === TILLBAKA TILL TOPPEN-KNAPP === */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: var(--pink-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    pointer-events: none; /* Klicka inte när osynlig */
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all; /* Klickbar när synlig */
+}
+
+.back-to-top:hover {
+    background: var(--pink-1);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 158, 181, 0.4);
+}
+
+/* === HOVER-EFFEKTER FÖR GALLERI === */
+.gallery-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 100, 80, 0.2);
+}
+
+/* === HOVER-EFFEKTER FÖR BILDER === */
+.image-placeholder {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-placeholder {
+    transform: scale(1.05);
+}
