@@ -77,34 +77,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* === HERO / BANNER === */
-/* Bakgrundsbilden */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 550px; /* Justera denna siffra om du vill ha högre/lägre banner */
-    background: url('banner.jpg') center 10% / cover no-repeat; /* 10% visar överdelen (ansiktet) */
-    z-index: 2;
-}
-
-/* De organiska formerna (bakom bilden) */
-.hero .shape {
-    position: absolute;
-    opacity: 0.45;
-    pointer-events: none;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: none !important; /* STILLA */
-    z-index: 1; /* Ligger UNDER bilden */
-}
-
-/* Innehåll ovanpå */
-.hero-content {
-    position: relative;
-    z-index: 3;
-    padding: 2rem;
-    text-align: center;
-}
 /* === 🌊 STATISKA ORGANISKA FORMER (INGEN RÖRELSE) === */
 .shape, .circle, .floating-shape,
 .shape-about-1, .shape-about-2,
@@ -539,7 +511,7 @@ body {
 /* === HERO / BANNER === */
 .hero {
     position: relative;
-    padding-top: 80px; /* Plats för menyn */
+    padding-top: 0px; /* Plats för menyn */
     background-color: var(--bg-main); /* Din rosa bakgrund */
     overflow: visible;
 }
