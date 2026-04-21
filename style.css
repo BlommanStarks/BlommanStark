@@ -498,3 +498,25 @@ body {
         font-size: 2.5rem;
     }
 }
+/* === ️ TOPPBANNER (ERSÄTTER HELSKÄRMS-HERO) === */
+.top-banner {
+    width: 100%;
+    margin-top: 70px; /* Viktigt: så att bilden inte hamnar bakom den fasta menyn */
+    overflow: hidden;
+}
+
+.top-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 350px; /* Justera denna siffra om du vill ha högre/lägre banner */
+    object-fit: cover;
+}
+
+/* Inaktiverar den gamla fullskärmsstilen så den inte stör layouten */
+.hero {
+    min-height: auto !important;
+    background: none !important;
+    padding: 0 !important;
+    display: none; /* Döljer tomma hero-element om de finns kvar */
+}
