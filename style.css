@@ -79,37 +79,36 @@ body {
 
 /* === HERO SEKTION === */
 /* === HERO / BANNER === */
+/* === HERO / BANNER === */
 .hero {
-    min-height: auto;              /* Tar bort helskärmskravet */
-    padding: 80px 20px 40px;       /* 80px topp-marginal så menyn inte täcker bilden */
-    background: var(--bg-main);    /* Använder din mjuka rosa bakgrundsfärg */
-    text-align: center;
+    min-height: auto;
+    padding: 0;
+    background: var(--bg-main);
     position: relative;
     overflow: hidden;
+    margin-top: 70px; /* Viktigt: så bannern hamnar UNDER den fasta menyn */
 }
 
-/* Detta styr hur bilden visas */
 .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 320px;                 /* Bannerhöjd - justera här om du vill ha den högre/lägre */
-    background: url('hero-bg.jpg') center 20% / cover no-repeat; /* 20% flyttar fokus uppåt så huvudet syns */
-    border-radius: 0 0 20px 20px;  /* Mjuk rundning nertill */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: 600px; /* <-- STÖRRE HÖJD: Nu finns plats för både huvud och blommor */
+    
+    /* NYCKELN: center 70% flyttar bilden NEDÅT så att huvudet (som är högst upp) syns */
+    background: url('hero-bg.jpg') center 70% / cover no-repeat;
+    
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     z-index: 1;
 }
 
-/* Se till att texten hamnar OVANPÅ bilden, inte under */
+/* Se till att eventuell text hamnar ovanpå bilden, inte under */
 .hero-content {
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1.5rem;
-    border-radius: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: none; /* Döljer den gamla text-rutan eftersom texten nu ska vara INI bilden */
+}
 }
 /* === 🌊 STATISKA ORGANISKA FORMER (INGEN RÖRELSE) === */
 .shape, .circle, .floating-shape,
