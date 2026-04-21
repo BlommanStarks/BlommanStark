@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlommanStark</title>
-    <!-- Kopplar till din befintliga CSS-fil -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome för ikoner (om du vill ha Instagram-ikonen i footern) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -22,11 +20,19 @@
         </ul>
     </nav>
 
-    <!-- HERO SEKTION (Här visas din hero-bg.jpg automatiskt via CSS) -->
-    <!-- TOPPBANNER -->
-<div class="top-banner">
-    <img src="herobg.jpg" alt="BlommanStark banner">
-</div>
+    <!-- HERO / BANNER (Din bild med text inbakad) -->
+    <section class="hero" id="hero">
+        <!-- Organiska former i bakgrunden -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        
+        <!-- Själva bilden -->
+        <div class="hero-image-wrapper">
+            <img src="hero-bg.jpg" alt="BlommanStark banner">
+        </div>
+    </section>
 
     <!-- OM OSS -->
     <section class="about" id="about">
@@ -36,7 +42,7 @@
                 <div class="text-box">
                     <p>Välkommen till BlommanStark. Handgjorda pappersblommor till hem och butik.</p>
                     <p>Workshops.</p>
-                     <p>Vi tror på detaljer, färg och känsla. Låt dig inspireras av vårt arbete.</p>
+                    <p>Vi tror på detaljer, färg och känsla. Låt dig inspireras av vårt arbete.</p>
                 </div>
                 <div class="graphic-box">
                     <!-- CSS-formerna visas automatiskt här -->
@@ -45,35 +51,30 @@
         </div>
     </section>
 
-    <!-- GALLERI -->
+    <!-- GALLERI (16 rutor) -->
     <section class="gallery" id="gallery">
         <div class="container">
             <h2>Produkter</h2>
             <p class="subtitle">Blommor</p>
-            <section class="gallery" id="gallery">
-    <div class="container">
-        <h2>Galleri</h2>
-        <p class="subtitle">Våra senaste projekt</p>
-        <div class="gallery-grid">
-            <!-- HÄR ska du klistra in dina 16 block --><div class="gallery-item"><div class="image-placeholder">Bild 1</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 2</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 3</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 4</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 5</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 6</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 7</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 8</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 9</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 10</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 11</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 12</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 13</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 14</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-<div class="gallery-item"><div class="image-placeholder">Bild 15</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
-
+            <div class="gallery-grid">
+                <div class="gallery-item"><div class="image-placeholder">Bild 1</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 2</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 3</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 4</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 5</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 6</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 7</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 8</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 9</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 10</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 11</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 12</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 13</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 14</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 15</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+                <div class="gallery-item"><div class="image-placeholder">Bild 16</div><div class="image-text"><h3>Rubrik</h3><p>Beskrivning...</p></div></div>
+            </div>
         </div>
-    </div>
-</section>
     </section>
 
     <!-- KONTAKT -->
@@ -83,7 +84,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Hör av dig!</h3>
-                    <p>Har du frågor,vill göra beställning eller boka workshop?</p>
+                    <p>Har du frågor, vill göra beställning eller boka workshop?</p>
                     <p><strong>Email:</strong> blommanstark@gmail.com</p>
                     <p><strong>Instagram:</strong> <a href="https://instagram.com/blommanstark" target="_blank">@blommanstark</a></p>
                 </div>
