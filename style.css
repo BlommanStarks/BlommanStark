@@ -89,21 +89,6 @@ body {
     animation: none !important; /* ← STÄNGER AV ALL RÖRELSE */
     box-shadow: 0 10px 30px rgba(255,100,80,0.12);
 }
-
-/* === 🟣 HERO-FORMER === */
-.shape-1  { width:320px; height:320px; top:5%;   left:-8%;  background:var(--pink-1);  border-radius:62%38%29%71%/61%31%69%39%; }
-.shape-2  { width:220px; height:220px; top:65%;  right:5%;  background:var(--red-1);   border-radius:35%65%72%28%/32%28%72%68%; }
-.shape-3  { width:180px; height:180px; bottom:15%;left:25%; background:var(--peach-1); border-radius:70%30%65%35%/38%62%38%62%; }
-.shape-4  { width:250px; height:250px; top:25%;  right:25%; background:var(--orange-1);border-radius:45%55%30%70%/60%30%70%40%; }
-.shape-5  { width:280px; height:280px; bottom:-40px;left:-40px;background:var(--pink-2);border-radius:55%45%35%65%/65%35%65%35%; }
-.shape-6  { width:200px; height:200px; top:-30px;right:10%; background:var(--red-2);   border-radius:40%60%70%30%/30%70%30%70%; }
-.shape-7  { width:150px; height:150px; top:40%;  left:15%;  background:var(--peach-2); border-radius:50%50%40%60%/60%40%60%40%; }
-.shape-8  { width:170px; height:170px; bottom:30%;right:15%;background:var(--orange-2);border-radius:65%35%45%55%/45%55%45%55%; }
-.shape-9  { width:130px; height:130px; top:15%;  right:40%; background:var(--pink-1);  border-radius:58%42%32%68%/62%38%62%38%; }
-.shape-10 { width:190px; height:190px; bottom:5%; right:35%; background:var(--red-1);  border-radius:42%58%68%32%/32%68%32%68%; }
-.shape-11 { width:160px; height:160px; top:75%;  left:35%;  background:var(--peach-1); border-radius:72%28%52%48%/48%52%48%52%; }
-.shape-12 { width:140px; height:140px; top:55%;  left:45%;  background:var(--orange-1);border-radius:38%62%62%38%/38%38%62%62%; }
-
 /* === 🟠 FORMER FÖR ANDRA SEKTIONER === */
 .shape-about-1 { width:140px; height:140px; top:10%; right:-5%;  background:var(--pink-2);   border-radius:55%45%60%40%/40%60%40%60%; }
 .shape-about-2 { width:110px; height:110px; bottom:15%; left:-4%; background:var(--orange-2); border-radius:65%35%35%65%/35%65%35%65%; }
@@ -143,31 +128,6 @@ body {
     }
     /* Behåll 3 stora former på mobil om du vill: */
     .shape-1, .shape-4, .shape-8 { display: block; opacity: 0.35; }
-}
-
-/* === HERO INNEHÅLL === */
-.hero-content {
-    text-align: center;
-    z-index: 10;
-    padding: 2rem;
-    background: rgba(255,255,255,0.85);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    max-width: 600px;
-    backdrop-filter: blur(5px);
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    color: var(--red-medium);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    color: var(--red-dark);
-    margin-bottom: 2rem;
 }
 
 .btn {
@@ -508,111 +468,6 @@ body {
     padding: 0 !important;
     display: none; /* Döljer tomma hero-element om de finns kvar */
 }
-/* === HERO / BANNER === */
-.hero {
-    position: relative;
-    padding-top: 0px; /* Plats för menyn */
-    background-color: var(--bg-main); /* Din rosa bakgrund */
-    overflow: visible;
-}
-
-/* Bilden i bannern */
-.hero-image-wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 600px; /* Gör bannern högre så huvudet syns */
-    object-fit: cover;
-    object-position: center 10%; /* Visar överdelen av bilden (ansiktet) */
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* De organiska formerna (bakom bilden) */
-.hero .shape {
-    position: absolute;
-    opacity: 0.4;
-    pointer-events: none;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: none !important; /* STILLA */
-    z-index: 1; /* Ligger UNDER bilden */
-}
-
-/* Placering av formerna runt bannern */
-.hero .shape-1 { width: 200px; height: 200px; top: 100px; left: -50px; background: var(--pink-1); }
-.hero .shape-2 { width: 150px; height: 150px; top: 200px; right: -30px; background: var(--peach-1); }
-.hero .shape-3 { width: 180px; height: 180px; bottom: 50px; left: 10%; background: var(--orange-1); }
-.hero .shape-4 { width: 120px; height: 120px; top: 150px; right: 20%; background: var(--red-1); }
-
-/* Ta bort gamla hero-regler som kan störa */
-.hero::before { display: none !important; }
-.top-banner { display: none !important; }
-/* HERO BANNER */
-.hero {
-    position: relative;
-    padding-top: 80px;
-    background-color: var(--bg-main);
-    overflow: visible;
-}
-
-.hero-image-wrapper {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 600px;
-    object-fit: cover;
-    object-position: center 10%;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.hero .shape {
-    position: absolute;
-    opacity: 0.45;
-    pointer-events: none;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: none !important;
-    z-index: 1;
-}
-
-.hero .shape-1 { width: 200px; height: 200px; top: 100px; left: -50px; background: var(--pink-1); }
-.hero .shape-2 { width: 150px; height: 150px; top: 200px; right: -30px; background: var(--peach-1); }
-.hero .shape-3 { width: 180px; height: 180px; bottom: 50px; left: 10%; background: var(--orange-1); }
-.hero .shape-4 { width: 120px; height: 120px; top: 150px; right: 20%; background: var(--red-1); }
-/* === BAKGRUNDSFORMER ÖVER HELA SIDAN === */
-.page-shapes {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -1; /* Ligger bakom allt innehåll */
-    overflow: hidden;
-    pointer-events: none; /* Stör inte klick eller scroll */
-}
-
-.page-shapes .p-shape {
-    position: absolute;
-    opacity: 0.35;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: none !important; /* Helt stilla */
-}
 
 /* Placering & dina befintliga färger */
 .page-shapes .p-shape-1 { width: 350px; height: 350px; top: 5%; left: -10%; background: var(--pink-1); }
@@ -741,4 +596,44 @@ body {
         border-radius: 25px;
         font-size: 0.9rem;
     }
+}/* === FIX: BANNER & TEXT-RUTA === */
+
+/* 1. Bannern ska synas högst upp */
+.hero {
+    position: relative;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: var(--bg-main);
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px; /* Justera höjden här om du vill */
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 0 0 30px 30px;
+}
+
+/* 2. Fixa text-rutan så den inte svämmar över */
+#about .text-box {
+    background: linear-gradient(135deg, var(--pink-2), var(--pink-1)) !important;
+    /* Ändrar från extrem blob till snygg rundad ruta */
+    border-radius: 40px !important; 
+    border: none !important;
+    box-shadow: 0 8px 25px rgba(255, 158, 181, 0.25) !important;
+    padding: 2rem !important;
+    color: #5a3d4a !important;
+    max-width: 600px !important; /* Begränsar bredden så den inte tar över */
+    margin: 0 auto !important; /* Centrerar rutan */
+    position: relative !important;
+    z-index: 10 !important;
 }
