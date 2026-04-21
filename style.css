@@ -1,5 +1,5 @@
 /* ==========================================
-   🌸 BLÖMMAN STARK - REN & ORGANISK DESIGN
+   🌸 BLÖMMAN STARK - FINAL & SÄKER VERSION
    ========================================== */
 
 /* === GRUND & VARIABLER === */
@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: 'Outfit', system-ui, sans-serif; /* Mjuk, modern, professionell */
+    font-family: 'Outfit', system-ui, sans-serif;
     line-height: 1.7;
     color: var(--text-main);
     background: var(--bg-main);
@@ -47,10 +47,10 @@ ul { list-style: none; }
 .p-shape-4 { width: 200px; height: 200px; top: 20%; right: 22%; background: var(--red-1); }
 .p-shape-5 { width: 300px; height: 300px; bottom: 25%; right: 8%; background: var(--pink-2); }
 
-/* === MENY TILL VÄNSTER === */
+/* === MENY TILL HÖGER (NY PLACERING) === */
 .side-menu {
     position: fixed;
-    left: 25px;
+    right: 25px;      /* Ändrat från left till right */
     top: 50%;
     transform: translateY(-50%);
     z-index: 1000;
@@ -94,7 +94,7 @@ ul { list-style: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%; /* Visar ansikte & blommor */
+    object-position: center 35%; /* Ändrat från 15% till 35% för att visa mer neråt */
     display: block;
     border-radius: 0 0 40px 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -202,6 +202,7 @@ h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 
         justify-content: center;
         gap: 10px;
         padding: 1.5rem 1rem;
+        right: 0; /* Återställ höger-marginal för mobil */
     }
     .menu-blob { width: auto; height: auto; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; }
     .hero-image-wrapper { max-height: 400px; }
