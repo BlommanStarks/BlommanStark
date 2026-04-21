@@ -81,7 +81,7 @@ body {
 .hero {
     position: relative;
     min-height: auto;
-    padding-top: 80px; /* Plats så menyn inte täcker bilden */
+    padding-top: 0px; /* Plats så menyn inte täcker bilden */
     background-color: var(--bg-main); /* Din rosa bakgrundsfärg */
     overflow: visible; /* Tillåter formerna att synas utanför kanten */
 }
@@ -715,5 +715,66 @@ body {
         border-radius: 45% 55% 50% 50% / 50% 45% 55% 50% !important; /* Rundare & säkrare för mobil */
         padding: 1.8rem 1.2rem !important;
         box-shadow: 0 6px 20px rgba(255, 158, 181, 0.25) !important;
+    }
+}
+/* === VÄNSTER MENY (ORGANISKA FORMER) === */
+.side-menu {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.menu-blob {
+    position: relative;
+    width: 130px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Varje knapp får en unik organisk form & din befintliga färgpalett */
+.menu-blob-1 { background: var(--pink-2); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.menu-blob-2 { background: var(--peach-1); border-radius: 40% 60% 70% 30% / 50% 40% 60% 50%; }
+.menu-blob-3 { background: var(--pink-1); border-radius: 30% 70% 40% 60% / 60% 50% 50% 40%; }
+.menu-blob-4 { background: var(--peach-2); border-radius: 70% 30% 60% 40% / 40% 60% 40% 60%; }
+
+.menu-blob:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 100, 80, 0.25);
+    color: var(--red-medium);
+}
+
+/* Mobil: gör om till en enkel rad högst upp så den inte täcker innehållet */
+@media (max-width: 768px) {
+    .side-menu {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 1rem 0;
+        left: 0;
+    }
+    .menu-blob {
+        width: auto;
+        height: auto;
+        padding: 0.6rem 1rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
     }
 }
