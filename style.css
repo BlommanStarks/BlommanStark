@@ -1,688 +1,213 @@
 /* ==========================================
-   🌸 BLÖMMAN STARK - UPPDATERAD CSS
+   🌸 BLÖMMAN STARK - REN & ORGANISK DESIGN
    ========================================== */
 
 /* === GRUND & VARIABLER === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-    /* 🌸 NY FÄRGPALETT: ROSA, RÖTT, PERSIKA, ORANGE */
     --bg-main: #fff5f7;
-    --text-main: #333333;
-    
-    --pink-1: #ff9eb5;   --pink-2: #ffccd5;
-    --red-1:  #ff6b7a;   --red-2:  #ff3838;
-    --peach-1:#ffc8b3;   --peach-2:#ffb39e;
-    --orange-1:#ff9e6b;  --orange-2:#ff8c42;
-    
-    /* Knappar & text (behålls) */
+    --text-main: #3d3d3d;
+    --pink-1: #ff9eb5; --pink-2: #ffccd5;
+    --red-1: #ff6b7a; --red-2: #e63946;
+    --peach-1: #ffc8b3; --peach-2: #ffb39e;
+    --orange-1: #ff9e6b; --orange-2: #ff8c42;
     --white: #ffffff;
-    --gray-light: #f8f9fa;
-    --red-medium: #ff3838;
-    --red-dark: #c0392b;
-    --pink-medium: #ff8fa3;
-    --pink-dark: #ff6b7a;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Outfit', system-ui, sans-serif; /* Mjuk, modern, professionell */
+    line-height: 1.7;
     color: var(--text-main);
+    background: var(--bg-main);
     overflow-x: hidden;
-    background: var(--bg-main); /* ← Enhetlig bakgrund */
 }
 
-/* === NAVIGATION === */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: linear-gradient(135deg, var(--red-medium), var(--pink-dark));
+h1, h2, h3 { font-weight: 500; letter-spacing: -0.02em; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* === BAKGRUNDSFORMER (HELA SIDAN) === */
+.page-shapes {
     position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-}
-
-.nav-links a:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-}
-
-/* === 🌊 STATISKA ORGANISKA FORMER (INGEN RÖRELSE) === */
-.shape, .circle, .floating-shape,
-.shape-about-1, .shape-about-2,
-.shape-gallery-1, .shape-gallery-2,
-.shape-contact-1, .shape-contact-2 {
-    position: absolute;
-    opacity: 0.6;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
     pointer-events: none;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Organisk form */
-    animation: none !important; /* ← STÄNGER AV ALL RÖRELSE */
-    box-shadow: 0 10px 30px rgba(255,100,80,0.12);
 }
-/* === 🟠 FORMER FÖR ANDRA SEKTIONER === */
-.shape-about-1 { width:140px; height:140px; top:10%; right:-5%;  background:var(--pink-2);   border-radius:55%45%60%40%/40%60%40%60%; }
-.shape-about-2 { width:110px; height:110px; bottom:15%; left:-4%; background:var(--orange-2); border-radius:65%35%35%65%/35%65%35%65%; }
-.shape-gallery-1 { width:160px; height:160px; top:20%; left:5%;   background:var(--red-2);    border-radius:45%55%65%35%/55%45%55%45%; }
-.shape-gallery-2 { width:130px; height:130px; bottom:10%; right:8%; background:var(--peach-1); border-radius:70%30%40%60%/30%70%60%40%; }
-.shape-contact-1 { width:150px; height:150px; top:5%; left:10%;   background:var(--orange-1); border-radius:50%50%30%70%/60%40%60%40%; }
-.shape-contact-2 { width:120px; height:120px; bottom:20%; right:5%; background:var(--pink-1);  border-radius:40%60%70%30%/30%70%30%70%; }
-
-/* ← TA BORT HELT: @keyframes morphShape och @keyframes float */
-/* === 🎞️ ANIMATION: SKIFTANDE FÄRGER + MORPH === */
-@keyframes morphShape {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-        background: var(--pink-1);
-    }
-    25% {
-        transform: translateY(-15px) scale(1.03);
-        background: var(--red-1);
-    }
-    50% {
-        transform: translateY(5px) scale(0.97);
-        background: var(--orange-1);
-    }
-    75% {
-        transform: translateY(-8px) scale(1.01);
-        background: var(--peach-1);
-    }
-}
-
-/* === 📱 MOBIL: DÖLJ EXTRA FORMER FÖR PRESTANDA === */
-@media (max-width: 768px) {
-    .shape, .circle, .floating-shape,
-    .shape-about-1, .shape-about-2,
-    .shape-gallery-1, .shape-gallery-2,
-    .shape-contact-1, .shape-contact-2 {
-        display: none;
-    }
-    /* Behåll 3 stora former på mobil om du vill: */
-    .shape-1, .shape-4, .shape-8 { display: block; opacity: 0.35; }
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, var(--red-medium), var(--pink-dark));
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255,107,122,0.4);
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255,107,122,0.6);
-}
-
-/* === LAYOUT & ABOUT === */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.about {
-    padding: 5rem 0;
-    background: var(--bg-main); /* ← Enhetlig bakgrund */
-}
-
-.about h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--red-medium);
-    margin-bottom: 3rem;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.text-box {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 2rem;
-    border-radius: 15px;
-    border-left: 5px solid var(--red-medium);
-    backdrop-filter: blur(4px);
-}
-
-.text-box p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.graphic-box {
-    position: relative;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 🌀 ORGANISKA CIRKLAR (ABOUT) */
-.circle {
+.page-shapes .p-shape {
     position: absolute;
-    opacity: 0.75;
-    animation: morphShape 14s ease-in-out infinite;
-    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.15);
+    opacity: 0.35;
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+    filter: blur(1px);
 }
+.p-shape-1 { width: 350px; height: 350px; top: 5%; left: -8%; background: var(--pink-1); }
+.p-shape-2 { width: 280px; height: 280px; top: 40%; right: -6%; background: var(--peach-1); }
+.p-shape-3 { width: 250px; height: 250px; bottom: 10%; left: 12%; background: var(--orange-1); }
+.p-shape-4 { width: 200px; height: 200px; top: 20%; right: 22%; background: var(--red-1); }
+.p-shape-5 { width: 300px; height: 300px; bottom: 25%; right: 8%; background: var(--pink-2); }
 
-.circle-1 {
-    width: 150px; height: 150px;
-    top: 50px; left: 50px;
-    background: var(--shape-a);
-    border-radius: 63% 37% 28% 72% / 60% 32% 68% 40%;
-    animation-duration: 15s;
-}
-
-.circle-2 {
-    width: 120px; height: 120px;
-    top: 80px; right: 80px;
-    background: var(--shape-b);
-    border-radius: 36% 64% 71% 29% / 33% 29% 71% 67%;
-    animation-duration: 17s;
-    animation-delay: 2s;
-}
-
-.circle-3 {
-    width: 100px; height: 100px;
-    bottom: 50px; left: 120px;
-    background: var(--shape-c);
-    border-radius: 69% 31% 64% 36% / 39% 61% 39% 61%;
-    animation-duration: 13s;
-    animation-delay: 4s;
-}
-
-/* === GALLERY === */
-.gallery {
-    padding: 5rem 0;
-    background: var(--bg-main); /* ← Enhetlig bakgrund */
-}
-
-.gallery h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--red-medium);
-    margin-bottom: 1rem;
-}
-
-.subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--red-dark);
-    margin-bottom: 3rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.gallery-item {
-    background: rgba(255,255,255,0.8);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255,107,122,0.2);
-}
-
-.image-placeholder {
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    background: linear-gradient(135deg, var(--pink-light), var(--pink-medium));
-}
-
-.image-text {
-    padding: 1.5rem;
-}
-
-.image-text h3 {
-    color: var(--red-medium);
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.image-text p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* === CONTACT === */
-/* === KONTAKT (ENHETLIG DESIGN, INGEN GRADIENT) === */
-.contact {
-    padding: 5rem 0;
-    background: var(--bg-main); /* ← Samma mjuka bakgrund som resten */
-    position: relative;
-    overflow: hidden;
-}
-
-.contact h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--red-medium);
-    margin-bottom: 3rem;
-}
-
-.contact-content {
-    position: relative;
-    z-index: 10;
-}
-
-.contact-info {
-    background: rgba(255, 255, 255, 0.75); /* ← Mjuk vit ruta */
-    color: var(--text-main);
-    padding: 3rem;
-    border-radius: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(255,107,122,0.15);
-    border: 1px solid rgba(255,143,163,0.3);
-    backdrop-filter: blur(4px);
-}
-
-.contact-info h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    color: var(--red-medium);
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: var(--text-main);
-    line-height: 1.8;
-}
-
-.contact-info a {
-    color: var(--pink-medium);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.contact-info a:hover {
-    color: var(--red-medium);
-    text-decoration: underline;
-}
-/* === FOOTER === */
-.footer {
-    background: var(--bg-main); /* ← Enhetlig bakgrund */
-    color: var(--text-main);
-    text-align: center;
-    padding: 2.5rem 2rem;
-}
-
-.footer-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    margin-bottom: 1rem;
-    opacity: 0.9;
-}
-
-.instagram-footer {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.8rem 1.5rem;
-    background: rgba(255,143,163,0.15);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255,143,163,0.3);
-}
-
-.instagram-footer:hover {
-    background: rgba(255,143,163,0.25);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255,143,163,0.2);
-}
-
-.instagram-footer i {
-    font-size: 1.3rem;
-}
-
-/* === LOGO HERO (BLOMMAN BORTTAGEN) === */
-.logo-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 1.5rem;
-}
-
-.logo-flower {
-    display: none !important; /* 🌸 EMON BORTTAGEN */
-}
-
-.logo-hero h1 {
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, var(--red-medium), var(--pink-dark), var(--red-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
-    text-shadow: none;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-/* === RESPONSIV DESIGN === */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .shape {
-        display: none; /* Döljer former på mobil för bättre läsbarhet */
-    }
-    
-    .logo-hero h1 {
-        font-size: 2.5rem;
-    }
-}
-/* === ️ TOPPBANNER (ERSÄTTER HELSKÄRMS-HERO) === */
-.top-banner {
-    width: 100%;
-    margin-top: 70px; /* Viktigt: så att bilden inte hamnar bakom den fasta menyn */
-    overflow: hidden;
-}
-
-.top-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 350px; /* Justera denna siffra om du vill ha högre/lägre banner */
-    object-fit: cover;
-}
-
-/* Inaktiverar den gamla fullskärmsstilen så den inte stör layouten */
-.hero {
-    min-height: auto !important;
-    background: none !important;
-    padding: 0 !important;
-    display: none; /* Döljer tomma hero-element om de finns kvar */
-}
-
-/* Placering & dina befintliga färger */
-.page-shapes .p-shape-1 { width: 350px; height: 350px; top: 5%; left: -10%; background: var(--pink-1); }
-.page-shapes .p-shape-2 { width: 280px; height: 280px; top: 40%; right: -8%; background: var(--peach-1); }
-.page-shapes .p-shape-3 { width: 250px; height: 250px; bottom: 10%; left: 15%; background: var(--orange-1); }
-.page-shapes .p-shape-4 { width: 200px; height: 200px; top: 20%; right: 25%; background: var(--red-1); }
-.page-shapes .p-shape-5 { width: 300px; height: 300px; bottom: 25%; right: 10%; background: var(--pink-2); }
-/* === MOBILANPASSNING (Endast < 768px) === */
-@media (max-width: 768px) {
-    /* Dölj bakgrundsformerna på mobil för renare look & snabbare laddning */
-    .page-shapes { display: none; }
-
-    /* Justera bannern så den inte tar upp halva skärmen */
-    .hero-image-wrapper img {
-        max-height: 300px;
-        object-position: center 25%; /* Flyttar fokus uppåt så ansiktet syns bättre */
-    }
-
-    /* Meny: stapla länkarna snyggt på mobil */
-    .navbar {
-        flex-direction: column;
-        padding: 0.8rem;
-    }
-    .nav-links {
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 0.5rem;
-    }
-    .nav-links a {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
-    }
-
-    /* Galleri & produkter: 1 kolumn på mobil */
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    /* Text & avstånd */
-    .container { padding: 0 1rem; }
-    h2 { font-size: 1.8rem; }
-    .text-box { padding: 1.5rem; margin: 0 0 2rem 0; }
-}
-/* === BLOB-FORM FÖR "OM OSS"-TEXTRUTAN === */
-#about .text-box {
-    background: linear-gradient(135deg, var(--pink-2), var(--pink-1)) !important;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% !important;
-    border: none !important;
-    box-shadow: 0 10px 30px rgba(255, 158, 181, 0.3) !important;
-    padding: 2.5rem 2rem !important;
-    color: #5a3d4a !important;
-}
-
-#about .text-box p {
-    color: #5a3d4a !important;
-    line-height: 1.8 !important;
-}
-
-/* === MOBIL-ANPASSNING (skärmar < 768px) === */
-@media (max-width: 768px) {
-    #about .text-box {
-        border-radius: 45% 55% 50% 50% / 50% 45% 55% 50% !important; /* Rundare & säkrare för mobil */
-        padding: 1.8rem 1.2rem !important;
-        box-shadow: 0 6px 20px rgba(255, 158, 181, 0.25) !important;
-    }
-}
-/* === VÄNSTER MENY (ORGANISKA FORMER) === */
+/* === MENY TILL VÄNSTER === */
 .side-menu {
     position: fixed;
-    left: 30px;
+    left: 25px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 }
-
 .menu-blob {
-    position: relative;
-    width: 130px;
-    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    width: 120px;
+    height: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--text-main);
-    font-weight: 600;
-    font-size: 0.95rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.5);
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
 }
-
-/* Varje knapp får en unik organisk form & din befintliga färgpalett */
-.menu-blob-1 { background: var(--pink-2); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+.menu-blob-1 { background: var(--pink-2); border-radius: 60% 40% 30% 70% / 55% 45% 55% 45%; }
 .menu-blob-2 { background: var(--peach-1); border-radius: 40% 60% 70% 30% / 50% 40% 60% 50%; }
 .menu-blob-3 { background: var(--pink-1); border-radius: 30% 70% 40% 60% / 60% 50% 50% 40%; }
-.menu-blob-4 { background: var(--peach-2); border-radius: 70% 30% 60% 40% / 40% 60% 40% 60%; }
+.menu-blob-4 { background: var(--peach-2); border-radius: 70% 30% 60% 40% / 45% 55% 45% 55%; }
+.menu-blob-5 { background: var(--orange-1); border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; }
+.menu-blob-6 { background: var(--red-1); border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%; color: var(--white); }
+.menu-blob:hover { transform: scale(1.08) rotate(-2deg); box-shadow: 0 8px 20px rgba(255, 100, 80, 0.2); }
 
-.menu-blob:hover {
-    transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(255, 100, 80, 0.25);
-    color: var(--red-medium);
+/* === HERO / BILD HÖGST UPP === */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-image-wrapper {
+    width: 100%;
+    max-height: 650px;
+}
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Visar ansikte & blommor */
+    display: block;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Mobil: gör om till en enkel rad högst upp så den inte täcker innehållet */
+/* === ALLMÄNNA SEKTIONER === */
+.container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 2rem; }
+.subtitle { text-align: center; font-size: 1.1rem; color: var(--peach-2); margin-top: -1.5rem; margin-bottom: 2.5rem; }
+
+/* === INFO-BLOB (TEXTEN FLÖDAR INOM FORMEN) === */
+.info-blob {
+    background: linear-gradient(135deg, var(--pink-2), var(--peach-1));
+    border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%;
+    padding: 3rem 3.5rem;
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 0 12px 35px rgba(255, 150, 130, 0.25);
+    text-align: center;
+    color: #4a3b3b;
+    position: relative;
+    overflow: visible;
+}
+.info-blob p { margin-bottom: 1rem; font-size: 1.05rem; line-height: 1.8; }
+
+/* === KALENDER-BLOB === */
+.calendar-blob {
+    background: var(--white);
+    border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%;
+    padding: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(255, 180, 160, 0.2);
+    text-align: center;
+    border: 2px solid var(--peach-2);
+}
+.calendar-blob h3 { font-size: 1.4rem; color: var(--orange-1); margin-bottom: 1.5rem; }
+.calendar-blob ul { text-align: left; display: inline-block; }
+.calendar-blob li { margin-bottom: 0.8rem; font-size: 1rem; color: var(--text-main); }
+
+/* === GALLERI === */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.gallery-item {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(255, 120, 100, 0.15); }
+.image-placeholder {
+    height: 240px;
+    background: linear-gradient(135deg, var(--pink-2), var(--peach-1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.image-text { padding: 1.2rem; }
+.image-text h3 { font-size: 1.2rem; color: var(--red-1); margin-bottom: 0.4rem; }
+.image-text p { font-size: 0.95rem; color: #666; }
+
+/* === KONTAKT & FOOTER === */
+.contact-info {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 30px;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 150, 130, 0.15);
+    border: 1px solid var(--peach-2);
+}
+.contact-info a { color: var(--pink-1); font-weight: 500; transition: color 0.2s; }
+.contact-info a:hover { color: var(--red-1); }
+
+.footer { text-align: center; padding: 3rem 2rem; color: var(--text-main); opacity: 0.85; }
+.instagram-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--pink-2);
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+.instagram-footer:hover { background: var(--pink-1); transform: translateY(-3px); }
+
+/* === MOBILANPASSNING === */
 @media (max-width: 768px) {
+    .page-shapes { display: none; }
     .side-menu {
         position: static;
         transform: none;
         flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
-        padding: 1rem 0;
-        left: 0;
+        padding: 1.5rem 1rem;
     }
-    .menu-blob {
-        width: auto;
-        height: auto;
-        padding: 0.6rem 1rem;
-        border-radius: 25px;
-        font-size: 0.9rem;
-    }
-}/* === FIX: BANNER & TEXT-RUTA === */
-
-/* 1. Bannern ska synas högst upp */
-.hero {
-    position: relative;
-    padding-top: 0;
-    margin-top: 0;
-    background-color: var(--bg-main);
-}
-
-.hero-image-wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.hero-image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 500px; /* Justera höjden här om du vill */
-    object-fit: cover;
-    object-position: center 10%;
-    border-radius: 0 0 30px 30px;
-}
-
-/* 2. Fixa text-rutan så den inte svämmar över */
-#about .text-box {
-    background: linear-gradient(135deg, var(--pink-2), var(--pink-1)) !important;
-    /* Ändrar från extrem blob till snygg rundad ruta */
-    border-radius: 40px !important; 
-    border: none !important;
-    box-shadow: 0 8px 25px rgba(255, 158, 181, 0.25) !important;
-    padding: 2rem !important;
-    color: #5a3d4a !important;
-    max-width: 600px !important; /* Begränsar bredden så den inte tar över */
-    margin: 0 auto !important; /* Centrerar rutan */
-    position: relative !important;
-    z-index: 10 !important;
-}
-/* === ⚠️ NÖDLÄGE: Tvinga fram rätt utseende === */
-
-/* 1. Ta bort den gamla röda toppmenyn (som fortfarande finns i koden) */
-.navbar {
-    display: none !important;
-}
-
-/* 2. Tvinga fram bilden (fixar 'display: none'-felet) */
-.hero {
-    display: block !important;
-    min-height: auto !important;
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
-}
-
-.hero-image-wrapper img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: 600px !important;
-    object-fit: cover !important;
-    object-position: center 15% !important; /* Visar huvudet */
-    border-radius: 0 0 30px 30px !important;
-}
-
-/* 3. Fixa text-rutan så den inte täcker skärmen */
-#about .text-box {
-    max-width: 600px !important;       /* Begränsar bredden */
-    width: 90% !important;
-    margin: 0 auto !important;         /* Centrerar rutan */
-    border-radius: 40px !important;    /* Mjuk ruta istället för vild blobb */
-    position: relative !important;
-    z-index: 10 !important;
-    overflow: visible !important;
-}
-
-/* 4. Se till att bakgrunds-blobbarna syns */
-.page-shapes {
-    display: block !important;
-    z-index: -1 !important;
-}
-
-/* 5. Se till att sidomenyn syns */
-.side-menu {
-    display: flex !important;
-    z-index: 1000 !important;
+    .menu-blob { width: auto; height: auto; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; }
+    .hero-image-wrapper { max-height: 400px; }
+    .hero-image-wrapper img { object-position: center 25%; border-radius: 0 0 25px 25px; }
+    .container { padding: 3rem 1.5rem; }
+    h2 { font-size: 1.8rem; }
+    .info-blob, .calendar-blob, .contact-info { padding: 2rem 1.5rem; border-radius: 30px; max-width: 100%; }
+    .gallery-grid { grid-template-columns: 1fr; }
 }
