@@ -92,7 +92,7 @@ body {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 550px; /* Justera denna siffra om du vill ha högre/lägre banner */
-    background: url('hero-bg.jpg') center 10% / cover no-repeat; /* 10% visar överdelen (ansiktet) */
+    background: url('banner.jpg') center 10% / cover no-repeat; /* 10% visar överdelen (ansiktet) */
     z-index: 2;
 }
 
