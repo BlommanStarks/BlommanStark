@@ -78,14 +78,6 @@ body {
 }
 
 /* === HERO / BANNER === */
-.hero {
-    position: relative;
-    min-height: auto;
-    padding-top: 0px; /* Plats så menyn inte täcker bilden */
-    background-color: var(--bg-main); /* Din rosa bakgrundsfärg */
-    overflow: visible; /* Tillåter formerna att synas utanför kanten */
-}
-
 /* Bakgrundsbilden */
 .hero::before {
     content: "";
