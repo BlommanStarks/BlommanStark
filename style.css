@@ -637,3 +637,52 @@ body {
     position: relative !important;
     z-index: 10 !important;
 }
+/* === ⚠️ NÖDLÄGE: Tvinga fram rätt utseende === */
+
+/* 1. Ta bort den gamla röda toppmenyn (som fortfarande finns i koden) */
+.navbar {
+    display: none !important;
+}
+
+/* 2. Tvinga fram bilden (fixar 'display: none'-felet) */
+.hero {
+    display: block !important;
+    min-height: auto !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+.hero-image-wrapper img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 600px !important;
+    object-fit: cover !important;
+    object-position: center 15% !important; /* Visar huvudet */
+    border-radius: 0 0 30px 30px !important;
+}
+
+/* 3. Fixa text-rutan så den inte täcker skärmen */
+#about .text-box {
+    max-width: 600px !important;       /* Begränsar bredden */
+    width: 90% !important;
+    margin: 0 auto !important;         /* Centrerar rutan */
+    border-radius: 40px !important;    /* Mjuk ruta istället för vild blobb */
+    position: relative !important;
+    z-index: 10 !important;
+    overflow: visible !important;
+}
+
+/* 4. Se till att bakgrunds-blobbarna syns */
+.page-shapes {
+    display: block !important;
+    z-index: -1 !important;
+}
+
+/* 5. Se till att sidomenyn syns */
+.side-menu {
+    display: flex !important;
+    z-index: 1000 !important;
+}
