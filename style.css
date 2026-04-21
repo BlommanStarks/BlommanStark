@@ -238,3 +238,11 @@ h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 
         border: none !important;
     }
 }
+/* Lägg till i style.css */
+.gallery-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 100, 80, 0.2);
+}
