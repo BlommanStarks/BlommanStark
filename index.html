@@ -4,232 +4,264 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlommanStark</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome för Instagram-ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffd6eb 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: #d63384;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* GALLERI */
+        .galleri {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        .galleri h2 {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .bild-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .bild-ruta {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .bild-ruta img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #f0f0f0;
+        }
+
+        .bild-ruta p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* INFO TEXT */
+        .info-text {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-text h2 {
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .info-text p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        /* KONTAKT */
+        .kontakt {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .kontakt h2 {
+            color: #d63384;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .kontakt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .kontakt-formular h3,
+        .kontakt-uppgifter h3 {
+            color: #d63384;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .kontakt-formular input,
+        .kontakt-formular textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ffd6eb;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .kontakt-formular button {
+            background: #d63384;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .kontakt-formular button:hover {
+            background: #b32a6f;
+        }
+
+        .kontakt-uppgifter p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #d63384;
+            font-size: 0.9em;
+        }
+
+        /* MOBIL */
+        @media (max-width: 768px) {
+            .kontakt-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Huvudinnehåll -->
-    <main class="main-content">
-        
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            
-            <div class="hero-content">
-    <!-- ✨ NY LOGO MED GRADIENT ✨ -->
-    <div class="logo-hero">
-        <span class="logo-flower">🌸</span>
-        <h1>BlommanStark</h1>
-    </div>
-    
-    <!-- Ta bort eller ändra undertexten här -->
-    <!-- <p>Din text här...</p> -->
-    
-    <a href="#contact" class="btn">Kontakta oss</a>
-</div>
-        </section>
 
-        <!-- Om oss Section -->
-        <!-- 1. HERO (topp) -->
-<section class="hero">
-   <!-- dina hero shapes + hero-content här -->
-</section>
+    <!-- HEADER -->
+    <header>
+        <h1>🌸 BlommanStark 🌸</h1>
+    </header>
 
-
-<!-- 2. GALLERI (flyttat hit) -->
-<section class="gallery" id="gallery">
-   <div class="container">
-      <h2>Galleri</h2>
-      <p class="subtitle">Mina verk</p>
-      <div class="gallery-grid">
-         <!-- Dina .gallery-item här -->
-      </div>
-      <!-- Valfria statiska former -->
-      <div class="shape-gallery-1"></div>
-      <div class="shape-gallery-2"></div>
-   </div>
-    <!-- Galleri Section -->
-       <div class="shape-gallery-1"></div>
-<div class="shape-gallery-2"></div>
-            <div class="container">
-                <!-- ⚠️ ÄNDRA HÄR: Din galleri-rubrik -->
-                <h2>Galleri</h2>
-                <p class="subtitle">Här kan du lägga upp dina bilder</p>
-                
-                <div class="gallery-grid">
-                    <!-- Bild 1 -->
-                    <div class="gallery-item">
-                        <!-- ⚠️ ÄNDRA HÄR: Ersätt med din bild -->
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ff6b6b, #ff8e8e);">
-                            <span>Lägg till bild 1</span>
-                        </div>
-                        <!-- ⚠️ ÄNDRA HÄR: Din bildtext -->
-                        <div class="image-text">
-                            <h3>Rubrik 1</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-
-                    <!-- Bild 2 -->
-                    <div class="gallery-item">
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ff4757, #ff6b7a);">
-                            <span>Lägg till bild 2</span>
-                        </div>
-                        <div class="image-text">
-                            <h3>Rubrik 2</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-
-                    <!-- Bild 3 -->
-                    <div class="gallery-item">
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ff3838, #ff5252);">
-                            <span>Lägg till bild 3</span>
-                        </div>
-                        <div class="image-text">
-                            <h3>Rubrik 3</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-
-                    <!-- Bild 4 -->
-                    <div class="gallery-item">
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ff9a9e, #fecfef);">
-                            <span>Lägg till bild 4</span>
-                        </div>
-                        <div class="image-text">
-                            <h3>Rubrik 4</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-
-                    <!-- Bild 5 -->
-                    <div class="gallery-item">
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a, #fee140);">
-                            <span>Lägg till bild 5</span>
-                        </div>
-                        <div class="image-text">
-                            <h3>Rubrik 5</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-
-                    <!-- Bild 6 -->
-                    <div class="gallery-item">
-                        <div class="image-placeholder" style="background: linear-gradient(135deg, #ff6b6b, #feca57);">
-                            <span>Lägg till bild 6</span>
-                        </div>
-                        <div class="image-text">
-                            <h3>Rubrik 6</h3>
-                            <p>Din text här...</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- GALLERI -->
+    <section class="galleri">
+        <h2>Galleri</h2>
+        <div class="bild-grid">
+            <div class="bild-ruta">
+                <img src="bild1.jpg" alt="Blomma 1">
+                <p>Beskrivning bild 1</p>
             </div>
-        </section>
-</section>
+            <div class="bild-ruta">
+                <img src="bild2.jpg" alt="Blomma 2">
+                <p>Beskrivning bild 2</p>
+            </div>
+            <div class="bild-ruta">
+                <img src="bild3.jpg" alt="Blomma 3">
+                <p>Beskrivning bild 3</p>
+            </div>
+            <div class="bild-ruta">
+                <img src="bild4.jpg" alt="Blomma 4">
+                <p>Beskrivning bild 4</p>
+            </div>
+            <div class="bild-ruta">
+                <img src="bild5.jpg" alt="Blomma 5">
+                <p>Beskrivning bild 5</p>
+            </div>
+            <div class="bild-ruta">
+                <img src="bild6.jpg" alt="Blomma 6">
+                <p>Beskrivning bild 6</p>
+            </div>
+        </div>
+    </section>
 
-<!-- 3. OM MIG -->
-<section class="about" id="about">
-   <div class="container">
-      <h2>Om mig</h2>
-      <div class="about-content">
-         <div class="text-box">
-            <!-- Din text här -->
-         </div>
-         <div class="graphic-box">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-         </div>
-      </div>
-      <!-- Valfria statiska former -->
-      <div class="shape-about-1"></div>
-      <div class="shape-about-2"></div>
-   </div>
-</section>
+    <!-- INFO TEXT -->
+    <section class="info-text">
+        <h2>Om BlommanStark</h2>
+        <p>
+            Här skriver du din informationstext. Berätta om dig själv, dina blommor, 
+            vad du gör och vad som gör dig speciell. Detta är platsen där du kan 
+            dela din passion och din historia med besökarna.
+        </p>
+    </section>
 
-<!-- 4. KONTAKTA OSS (längst ner, före footern) -->
-<section class="contact" id="contact">
-   <div class="container">
-      <h2>Kontakta oss</h2>
-      <div class="contact-content">
-         <div class="contact-info">
-            <h3>Hör av dig!</h3>
-            <p>Mejla: <a href="mailto:blomman@exempel.se">blomman@exempel.se</a></p>
-            <p>Instagram: <a href="https://instagram.com/dittkonto" target="_blank">@dittkonto</a></p>
-            <p>Svarstid: inom 24 timmar ⏱️</p>
-         </div>
-      </div>
-      <!-- Valfria statiska former -->
-      <div class="shape-contact-1"></div>
-      <div class="shape-contact-2"></div>
-   </div>
-</section>
+    <!-- KONTAKT -->
+    <section class="kontakt">
+        <h2>Kontakt</h2>
+        <div class="kontakt-grid">
+            <div class="kontakt-formular">
+                <h3>Kontaktformulär</h3>
+                <form>
+                    <input type="text" placeholder="Ditt namn" required>
+                    <input type="email" placeholder="Din e-post" required>
+                    <textarea rows="5" placeholder="Ditt meddelande" required></textarea>
+                    <button type="submit">Skicka meddelande</button>
+                </form>
+            </div>
+            <div class="kontakt-uppgifter">
+                <h3>Kontaktuppgifter</h3>
+                <p>
+                    <strong>E-post:</strong><br>
+                    din.email@exempel.se
+                </p>
+                <p>
+                    <strong>Telefon:</strong><br>
+                    070-123 45 67
+                </p>
+                <p>
+                    <strong>Adress:</strong><br>
+                    Din gata 123<br>
+                    123 45 Stockholm
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- 5. FOOTER (allra sist) -->
-<footer class="footer">
-   <div class="container">
-      <div class="footer-content">
-         <p>&copy; 2026 Blomman Stark. Alla rättigheter förbehållna.</p>
-         <a href="https://instagram.com/dittkonto" class="instagram-footer" target="_blank">
-            <i class="fab fa-instagram"></i> Följ på Instagram
-         </a>
-      </div>
-   </div>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 BlommanStark - Alla rättigheter förbehållna</p>
+    </footer>
 
-<!-- 3. OM MIG (efter galleri) -->
-<section class="about" id="about">
-   <div class="container">
-      <h2>Om mig</h2>
-      <div class="about-content">
-         <div class="text-box">
-            <!-- din text här -->
-         </div>
-         <div class="graphic-box">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
-         </div>
-      </div>
-      <!-- Dina shapes: -->
-      <div class="shape-about-1"></div>
-      <div class="shape-about-2"></div>
-   </div>
-</section>
-
-<!-- 4. FOOTER (kontakt-rutan är BORTTAGEN) -->
-<footer class="footer">
-   <div class="container">
-      <div class="footer-content">
-         <p>&copy; 2026 Blomman Stark. Alla rättigheter förbehållna.</p>
-         <a href="https://instagram.com/dittkonto" class="instagram-footer" target="_blank">
-            <i class="fab fa-instagram"></i> Följ på Instagram
-         </a>
-      </div>
-   </div>
-</footer>
-
-        
-
-        <!-- Kontakt Section med formulär -->
-       <div class="shape-contact-1"></div>
-<div class="shape-contact-2"></div>
-            <div class="container">
-                <!-- ⚠️ ÄNDRA HÄR: Din kontakt-rubrik -->
-                <h2>Kontakta oss</h
-<!-- Footer med Instagram -->
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2024 BlommanStark.</p>
-        
-        <!-- ✨ Instagram-länk ✨ -->
-        <a href="https://instagram.com/BlommanStark" target="_blank" class="instagram-footer">
-            <i class="fab fa-instagram"></i> Följ oss på Instagram @BlommanStark
-        </a>
-    </div>
-</footer>
+</body>
+</html>
