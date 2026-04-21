@@ -214,7 +214,7 @@ h2 { text-align: center; font-size: 2.2rem; color: var(--red-1); margin-bottom: 
 }/* === ÄNDRINGAR: BILD NERÅT & TA BORT LINJER === */
 @media (min-width: 769px) {
     .hero-image-wrapper img {
-        object-position: center 55%; /* Flyttar bilden nedåt på dator */
+        object-position: center 75%; /* Flyttar bilden nedåt på dator */
     }
 }
 
