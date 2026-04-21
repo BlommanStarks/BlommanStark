@@ -656,3 +656,41 @@ body {
 .page-shapes .p-shape-3 { width: 250px; height: 250px; bottom: 10%; left: 15%; background: var(--orange-1); }
 .page-shapes .p-shape-4 { width: 200px; height: 200px; top: 20%; right: 25%; background: var(--red-1); }
 .page-shapes .p-shape-5 { width: 300px; height: 300px; bottom: 25%; right: 10%; background: var(--pink-2); }
+/* === MOBILANPASSNING (Endast < 768px) === */
+@media (max-width: 768px) {
+    /* Dölj bakgrundsformerna på mobil för renare look & snabbare laddning */
+    .page-shapes { display: none; }
+
+    /* Justera bannern så den inte tar upp halva skärmen */
+    .hero-image-wrapper img {
+        max-height: 300px;
+        object-position: center 25%; /* Flyttar fokus uppåt så ansiktet syns bättre */
+    }
+
+    /* Meny: stapla länkarna snyggt på mobil */
+    .navbar {
+        flex-direction: column;
+        padding: 0.8rem;
+    }
+    .nav-links {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* Galleri & produkter: 1 kolumn på mobil */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Text & avstånd */
+    .container { padding: 0 1rem; }
+    h2 { font-size: 1.8rem; }
+    .text-box { padding: 1.5rem; margin: 0 0 2rem 0; }
+}
