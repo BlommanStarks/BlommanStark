@@ -112,7 +112,6 @@ ul { list-style: none; }
         border-radius: 0 0 25px 25px;
     }
     .hero-image-wrapper img {
-        object-position: center 75%; /* Justera om bilden beter sig annorlunda på mobil */
     }
 }
 /* === ALLMÄNNA SEKTIONER === */
